@@ -412,7 +412,7 @@ double median(const int *original, int *med, int size){
 			j++;
 		}
 	}
-	return mean/(j+1);
+	return (double)mean/(j);
 }
 */
 
