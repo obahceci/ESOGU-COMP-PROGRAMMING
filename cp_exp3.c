@@ -48,4 +48,64 @@ int largest (const int *n, int size){
 */
 
 
+/*
+#define SIZE 10													//q2
+void reverse (int *const n, int size);
+main(){
+	int numbers[SIZE]={3,7,10,5,4,1,6,9,2,8};
+	int i;
+	
+	printf("Array:\n");
+	for(i=0;i<SIZE;i++){
+		printf("%3d",numbers[i]);
+		if(i%10==9)
+			printf("\n");
+	}
+	reverse(numbers,SIZE);
+	
+	printf("Reverse:\n");
+	for(i=0;i<SIZE;i++)
+		printf("%3d",numbers[i]);
+		if(i%10==9)
+			printf("\n");
+	
+}
+void reverse (int *const n, int size){
+	int j,i;
+	for(j=size-1,i=0;j>=0;i++,j--){
+		n[i]=n[j];
+	}
+}
+*/
+
+
+/*
+#define SIZE 5
+void catalan(int *const n, int size); 							//q3
+main(){
+	int numbers[SIZE]={1};
+	int i;
+	
+	for(i=0;i<SIZE;i++){
+		printf("%3d",numbers[i]);
+	}
+	printf("\n");
+	
+	catalan(numbers,SIZE);
+	
+	for(i=0;i<SIZE;i++){
+		printf("%3d",numbers[i]);
+	}
+	
+	
+	
+
+}
+void catalan(int *const n, int size){
+	int i;
+	for(i=1;i<size;i++){
+		*(n+i)=   ( 4*i-2 ) * ( *(n+i-1) )/(i+1);
+	}
+}
+*/
 
