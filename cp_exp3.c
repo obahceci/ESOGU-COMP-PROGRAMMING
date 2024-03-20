@@ -48,6 +48,8 @@ int largest (const int *n, int size){
 */
 
 
+
+
 /*
 #define SIZE 10													//q2
 void reverse (int *const n, int size);
@@ -71,12 +73,15 @@ main(){
 	
 }
 void reverse (int *const n, int size){
-	int j,i;
-	for(j=size-1,i=0;j>=0;i++,j--){
-		n[i]=n[j];
+	int j,i,hold;
+	for(j=size-1,i=0;j>=(size-1)/2;i++,j--){
+		hold=*(n+i);
+		*(n+i)=*(n+j);
+		*(n+j)=hold;
 	}
 }
 */
+
 
 
 /*
