@@ -109,3 +109,76 @@ void catalan(int *const n, int size){
 }
 */
 
+
+
+/*
+#define SIZE 30
+int search (const int *const n, int size, int x);			//q4
+main(){	
+	srand(time(NULL));
+	int numbers[SIZE]={};
+	int i,x,result;
+	for(i=0;i<SIZE;i++){
+		numbers[i]=rand()%20;
+	}
+	
+	printf("Array:\n");
+	for(i=0;i<SIZE;i++){
+		printf("%3d",numbers[i]);
+		if(i%10==9)
+			printf("\n");		
+	}
+	printf("Enter a number to search:");
+	scanf("%d",&x);
+	result=search(numbers,SIZE,x);
+	if(result==1)
+		printf("%d is an element of the array\n",x);
+	else
+		printf("%d is not an element of the array\n",x);
+}
+
+int search (const int *const n, int size, int x){
+	int i=0;
+	for(i=0;i<size;i++){
+		if( *(n+i)==x )
+			return 1;	
+	}
+		return 0;
+}
+*/
+
+
+
+/*
+#define SIZE 30
+int count (const int *const n, int size);					//q5
+main(){
+	srand(time(NULL));
+	int numbers[SIZE]={};
+	int i,result;
+	
+	for(i=0;i<SIZE;i++){
+		numbers[i]=rand()%20;
+	}
+	printf("Array:\n");
+	for(i=0;i<SIZE;i++){
+		printf("%3d",numbers[i]);
+		if(i%10==9)
+			printf("\n");
+	}
+	result=count(numbers,SIZE);
+	
+	printf("Number of the odd elements: %d",result);
+}
+int count (const int *const n, int size){
+	int i,hold=0;;
+	for(i=0;i<size;i++){
+		if( *(n+i)%2==1 )
+			hold++;
+	}
+	
+	return hold;
+}
+*/
+
+
