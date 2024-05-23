@@ -95,3 +95,222 @@ void determine(struct student *s1,struct student *s2,struct student*s3)
 */
 
 
+
+
+
+
+
+
+
+/*
+struct Product{
+	int productID;
+	char production[30];
+	double cost;
+};
+
+double costAnalysis (struct Product *p);
+
+int main(void){
+	struct Product prd={};
+	
+	printf("Enter Product ID,production and cost per product: ");
+	scanf("%d%s%lf",&prd.productID,&prd.production,&prd.cost);
+	
+	printf("Total deformed cost of production line is : %lf \n", costAnalysis(&prd));
+	
+	
+	return 0;
+}
+
+double costAnalysis (struct Product *p){
+	
+	char control ='o';
+	int i=0;
+	char* temp= p->production;
+	
+	while(temp!=NULL){
+		temp=strchr(temp,control);
+		if(temp){
+			temp++;
+			i++;
+		}
+			
+	}
+	double total=0;
+	total=i*(p->cost);
+	
+	return total;
+}
+*/
+
+
+
+
+
+
+
+
+
+/*
+struct Grade{
+	int q1;
+	int q2;
+	int q3;
+	int mt;
+	int final;
+	double avg;
+	char *letter;
+};
+
+void histogram(struct Grade *g);
+
+int main(void){
+	//srand(time(NULL));
+	struct Grade array[10];
+	int i;
+	
+	printf("\t\tQ1 \t\t Q2 \t\t Q3 \t\t MIDTERM \t\t FINAL\n\n");
+	for(i=0;i<10;i++){
+		array[i].q1=rand()%101;
+		array[i].q2=rand()%101;
+		array[i].q3=rand()%101;
+		array[i].mt=rand()%101;
+		array[i].final=rand()%101;
+		
+		printf("%d. student: %4d \t\t %3d \t\t %4d \t\t %5d \t\t %9d\n",i+1,array[i].q1,array[i].q2,array[i].q3,array[i].mt,array[i].final);
+	}
+
+	printf("\n");
+	
+	histogram(array);
+	
+	
+}
+void histogram(struct Grade *g){
+	int i,j;
+	int gradeHist[5]={};
+	
+	for(i=0; i<10; i++){
+		
+		g[i].avg= (0.1*(g[i].q1+g[i].q2+g[i].q3)) + (0.25*g[i].mt) + (0.45*g[i].final) ;
+	
+	
+		g[i].letter = malloc(sizeof(char) * 3);					// bu satırı chat gpt yazdı
+		
+		if(g[i].avg>=85 && g[i].avg<=100){
+			strcpy(g[i].letter,"AA");
+			gradeHist[0]++;
+		}
+		
+		else if(g[i].avg>=65 && g[i].avg<85){
+			strcpy(g[i].letter,"BB");
+			gradeHist[1]++;
+		}
+		
+		else if(g[i].avg>=45 && g[i].avg<65){
+			strcpy(g[i].letter,"CC");
+			gradeHist[2]++;
+		}
+		
+		else if(g[i].avg>=35 && g[i].avg<45){
+			strcpy(g[i].letter,"DD");
+			gradeHist[3]++;
+		}
+		
+		else if(g[i].avg>=0 && g[i].avg<35){
+			strcpy(g[i].letter,"FF");
+			gradeHist[4]++;
+		}
+		
+		
+		printf("%d. student's Average: %.2lf Grade Letter: %s\n", i+1, g[i].avg, g[i].letter);
+		
+	}
+	
+	printf("Histogram of Grade Letter\n");
+	printf("%d student AA\n",gradeHist[0]);
+	printf("%d student BB\n",gradeHist[1]);
+	printf("%d student CC\n",gradeHist[2]);
+	printf("%d student DD\n",gradeHist[3]);
+	printf("%d student FF\n",gradeHist[4]);
+	
+		
+}
+
+*/
+
+
+
+
+
+
+
+
+
+
+/*
+struct Color{
+	int colorID;
+	int r;
+	int g;
+	int b;
+	int gray;
+};
+
+void grayScale (struct Color *pArray);
+
+int main(void){
+	struct Color clr[10]={};
+	int i,j;
+	for(i=0;i<10;i++){
+		clr[i].colorID=i+1;
+		clr[i].r=rand()%256;
+		clr[i].g=rand()%256;
+		clr[i].b=rand()%256;
+		clr[i].gray=0;
+	}
+	
+	printf("\n\nColorID \t\t R \t\t G \t\t B \t\t Gray \n\n");
+	for(i=0;i<10;i++)
+		printf("%3d \t\t %10d \t\t %2d \t\t %3d \t\t %3d\n",clr[i].colorID,clr[i].r,clr[i].g,clr[i].b,clr[i].gray);
+	
+	grayScale(clr);
+	
+	printf("\n\nColorID \t\t R \t\t G \t\t B \t\t Gray \n\n");
+	for(i=0;i<10;i++)
+		printf("%3d \t\t %10d \t\t %2d \t\t %3d \t\t %3d\n",clr[i].colorID,clr[i].r,clr[i].g,clr[i].b,clr[i].gray);
+	
+	
+	
+	for(i=0;i<10;i++){
+		for(j=0;j<9;j++){
+
+			if(clr[j].gray > clr[j+1].gray){
+				struct Color hold=clr[j];
+				clr[j]=clr[j+1];
+				clr[j+1]=hold;
+			}
+		}
+	}
+	printf("\nAscending order of color gray:\n");
+	printf("\n\nColorID \t\t R \t\t G \t\t B \t\t Gray \n\n");
+	for(i=0;i<10;i++)
+		printf("%3d \t\t %10d \t\t %2d \t\t %3d \t\t %3d\n",clr[i].colorID,clr[i].r,clr[i].g,clr[i].b,clr[i].gray);
+	
+	
+	return 0;
+}
+	
+void grayScale (struct Color *pArray){
+	int i;
+	for(i=0;i<10;i++){
+		pArray[i].gray= (pArray[i].r*0.299) +(pArray[i].g*0.587) + (pArray[i].b*0.114);
+	}
+	
+}
+*/
+	
+	
+
+
