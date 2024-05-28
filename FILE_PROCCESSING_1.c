@@ -187,6 +187,36 @@ int main(void){
 }
 */
 
+
+/*
+#define PI 3.141592														//reading example
+
+int main(void){
+	double dist,ang,X,Y; 
+	int i,readingID;
+	FILE *wfPtr; 
+
+	if ((wfPtr=fopen("readings.dat","r+"))==NULL)
+		printf("File could not be opened\n");
+	else{
+		printf("ReadingID Dist Ang X Y\n"); 
+		fscanf(wfPtr,"%d%lf%lf%lf%lf",&readingID,&dist,&ang,&X,&Y); 
+		while(!feof(wfPtr)){ 
+			printf("%9d %8.2lf %7.2lf %6.2lf %8.2lf\n",readingID,dist,ang,X,Y); 
+			fscanf(wfPtr,"%d%lf%lf%lf%lf",&readingID,&dist,&ang,&X,&Y); 
+		}
+	fclose(wfPtr); 
+	}
+	return 0; 
+}
+*/
+
+
+
+
+
+
+
 /*
 int main(void){
 	int i,a=3,b=5;
