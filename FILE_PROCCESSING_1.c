@@ -196,7 +196,7 @@ int main(void){
 	int i,readingID;
 	FILE *wfPtr; 
 
-	if ((wfPtr=fopen("readings.dat","r+"))==NULL)
+	if ((wfPtr=fopen("readings.txt","r+"))==NULL)
 		printf("File could not be opened\n");
 	else{
 		printf("ReadingID Dist Ang X Y\n"); 
